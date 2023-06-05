@@ -48,6 +48,10 @@ string CalcResourceFactory::to_json(float result) {
     return jsonResult.dump();
 }
 
+shared_ptr<Resource> CalcResourceFactory::get_resource() const {
+    return _resource;
+}
+
 void CalcResourceFactory::get_handler(const shared_ptr<Session> session) {
     const auto [num1, num2, operation] = get_path_parameters(session);
     const auto result = calculate(num1, num2, operation);
