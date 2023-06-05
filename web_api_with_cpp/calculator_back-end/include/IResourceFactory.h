@@ -11,4 +11,4 @@ class IResourceFactory {
 public:
 
     virtual shared_ptr<Resource> get_resource() const = 0;
-}
+};

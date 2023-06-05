@@ -11,4 +11,4 @@ public:
 private:
 
     shared_ptr<Settings> _settings;
-}
+};

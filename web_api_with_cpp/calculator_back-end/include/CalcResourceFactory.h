@@ -18,4 +18,4 @@ private:
     tuple<float, float, string> get_path_parameters(const shared_ptr<Session> session);
     void get_handler(const shared_ptr<Session> session);
     shared_ptr<Resource> _resource;
-}
+};
