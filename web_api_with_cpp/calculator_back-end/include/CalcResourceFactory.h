@@ -2,6 +2,9 @@
 
 #include "IResourceFactory.h"
 
+#include <tuple>
+#include <string>
+
 class CalcResourceFactory : public IResourceFactory {
 
 public:
@@ -10,6 +13,7 @@ public:
 
 private:
 
+    tuple<float, float, string> get_path_parameters(const shared_ptr<Session> session);
     void get_handler(const shared_ptr<Session> session);
     shared_ptr<Resource> _resource;
 }
