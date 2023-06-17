@@ -12,7 +12,7 @@ CalcResourceFactory::CalcResourceFactory() {
         "/{num1: [-+]?[0-9]*\\.?[0-9]*}"
         "/{num2: [-+]?[0-9]*\\.?[0-9]*}"
     );
-    _resource->set_method_handler("GET", [](const shared_ptr<Session> session)){
+    _resource->set_method_handler("GET", [](const shared_ptr<Session> session){
         get_handler(session);
     });
 }
