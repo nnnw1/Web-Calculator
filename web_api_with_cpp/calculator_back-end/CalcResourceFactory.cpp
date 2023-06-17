@@ -3,7 +3,7 @@
 #include <sstream>
 #include <iomanip>
 
-#include "json.hh"
+#include "json.hpp"
 
 CalcResourceFactory::CalcResourceFactory() {
     _resource = make_shared<Resource>();
@@ -12,7 +12,7 @@ CalcResourceFactory::CalcResourceFactory() {
         "/{num1: [-+]?[0-9]*\\.?[0-9]*}"
         "/{num2: [-+]?[0-9]*\\.?[0-9]*}"
     );
-    _resource->set_method_handler("GET", [](const shared_ptr<Session> session){
+    _resource->set_method_handler("GET", [&](const shared_ptr<Session> session){
         get_handler(session);
     });
 }
@@ -22,13 +22,14 @@ tuple<float, float, string> CalcResourceFactory::get_path_parameters(const share
     auto operation = request->get_path_parameter("operation");
     auto num1 = atof(request->get_path_parameter("num1").c_str());
     auto num2 = atof(request->get_path_parameter("num2").c_str());
+    return make_tuple(num1, num2, operation);
 }
 
 float CalcResourceFactory::calculate(float num1, float num2, string operation) {
     if(operation == "add") {
         return num1 + num2;
     }
-    else if(operation == "subtract") {
+    else if(operation == "minus") {
         return num1 - num2;
     }
     else if(operation == "multiply") {
@@ -57,5 +58,5 @@ void CalcResourceFactory::get_handler(const shared_ptr<Session> session) {
     const auto result = calculate(num1, num2, operation);
     auto content = to_json(result);
     session->close(OK, content, 
-        {{"Content-Length", to_string(content,size())}});
+        {{"Content-Length", to_string(content.size())}});
 }
