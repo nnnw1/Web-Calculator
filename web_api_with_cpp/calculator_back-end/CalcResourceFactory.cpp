@@ -8,7 +8,7 @@
 CalcResourceFactory::CalcResourceFactory() {
     _resource = make_shared<Resource>();
     _resource->set_path(
-        "/{operation: add|subtract|multiply|divide}"
+        "/{operation: add|minus|multiply|divide}"
         "/{num1: [-+]?[0-9]*\\.?[0-9]*}"
         "/{num2: [-+]?[0-9]*\\.?[0-9]*}"
     );
