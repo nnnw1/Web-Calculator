@@ -12,4 +12,4 @@ C++, restbed, json
 
 ## Demo
 
-![Screenshot](screenshot.png)
+![Screenshot](screentshot.png)
