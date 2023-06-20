@@ -1,0 +1,3 @@
+/mnt/d/webappWorkspace/Web-data-room/web_api_with_cpp/calculator_back-end/build/CMakeFiles/rebuild_cache.dir
+/mnt/d/webappWorkspace/Web-data-room/web_api_with_cpp/calculator_back-end/build/CMakeFiles/edit_cache.dir
+/mnt/d/webappWorkspace/Web-data-room/web_api_with_cpp/calculator_back-end/build/CMakeFiles/CalculatorAPI.dir
